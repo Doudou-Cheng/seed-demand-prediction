@@ -6,15 +6,16 @@ import numpy as np
 import os
 
 # Paths
-model_path = os.path.join(os.path.dirname(__file__), 'model', 'corteva_sales_prediction_pipeline.pkl')
-dict_path = os.path.join(os.path.dirname(__file__), 'model', 'product_dict.json')
+model_path = os.path.join('models', 'corteva_sales_prediction_pipeline.pkl')
+dict_path = os.path.join('models', 'product_dict.json')
+data_path = r'../data/case_study_data.csv'
 
 pipeline = joblib.load(model_path)
 
 # Load historical data for lag lookup
 @st.cache_data
 def load_database():
-    db = pd.read_csv('case_study_data.csv')
+    db = pd.read_csv(data_path)
     # Ensure consistent types
     db['SALESYEAR'] = db['SALESYEAR'].astype(str)
     db['PRODUCT'] = db['PRODUCT'].astype(str)

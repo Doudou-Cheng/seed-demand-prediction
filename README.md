@@ -17,7 +17,7 @@ Optimize inventory and sales strategies by forecasting demand for a diverse prod
 ## Quick Start
 
 1. Clone the repo:
-git clone
+git clone https://github.com/Doudou-Cheng/seed-demand-prediction.git
 2. Create the environment from the YAML file:
 conda env create -f environment.yml
 3. Activate the environment (I forgot to change the env name before pip freeze, so the name is not appropriate here):
@@ -27,7 +27,7 @@ streamlit run app/app.py
 
 ## Repo Structure
 
-- `data/`: Sample data for reproducibility (no file here)
+- `data/`: Training data should be here
 - `notebooks/`: Jupyter notebooks for EDA and modeling
 - `app/`: Web app code (Streamlit)
 - `README.md`: Project overview and instructions
